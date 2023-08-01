@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    <style>
+        body{
+            background-image:url("{% static '/images/g6.webp' %}");
+           background-repeat:no-repeat;
+            background-attachment:fixed;
+           background-size:cover;
+           margin:0;
+           padding:0;
+    
+        }
+    ul {
+        list-style-type: none;
+        padding:0;
+        margin:0;
+        overflow:hidden;
+        height:65px;
+        font-size:20px;
+        background-color:rgba(0, 255, 128, 0.6);
+    }
+    li {
+        float: left;
+    }
+    li a {
+        display: block;
+        color:black;
+        padding:18px 20px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    li a:hover {
+        font-size: 25px;
+        background-color:lightgreen;
+    }
+    .ab{
+        margin-left:1250px;
+        margin-top:0px;
+        font-size:36px;
+        background-color:#E8A0BF;
+        padding-bottom:4px;
+        padding-left:50px;
+        padding-top:15.5px; 
+        
+    }
+  
+</style>
+</head>
+<body style="background-color:rgba(240, 248, 255, 0.392)">
+    <ul>
+        <li>
+            <a href="/home1">Home</a>
+        </li>
+        <li>
+            <a href="/welcom">Welcome</a>
+        </li>
+        <li>
+            <a href="/bill">Bill</a>
+        </li>
+       
+        <li>
+            <a href="/reg">Registred</a>
+        </li>
+        <li>
+            <a href="/see">Search</a>
+        </li>
+        <h2 class="ab" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;color:indigo"><i class="fa-solid fa-dove fa-beat-fade" style="color:greenyellow;margin-right:8px;height:45px"></i>AB<a style="font-size:14px;font-style:italic">Make Things Possible</a></h2>
+        
+        
+    </ul>
+</body>
+{% block home %} 
+{% endblock %}
+</html>

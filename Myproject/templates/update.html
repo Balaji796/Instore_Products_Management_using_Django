@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Update</title>
+    {% extends 'base.html' %} 
+    {% block home %} 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .update{
+            background-color: #c5effe;
+            padding: 20px;
+            border-radius: 20px;
+            align-items: center;
+            float:center;
+            width:440px;
+            margin-left: 510px;
+            margin-top:40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="update">
+    <center><u><h1>UPDATE PRODUCT</h1></u>
+        <form method="post" action="new">
+            {% csrf_token %}
+        <h2>Name :</h2><input type="text" name="name"><br>
+       
+        <h2>Quantity :</h2><input type="text" name="quan"><br>
+        <br>
+        <button style="font-size: medium;color:antiquewhite; background-color: brown;" name="ad">Add</button> 
+        <button style="font-size: medium;color:antiquewhite; background-color: brown;" name="qua">update</button>
+
+        <h2>Price :</h2><input type="text" name="price"><br>
+        <br>
+        <button style="font-size: medium;color:antiquewhite; background-color: brown;" name="pri">update</button>
+    </form>
+        </center>
+    </div>
+        {% endblock %}
+    
+</body>
+</html>

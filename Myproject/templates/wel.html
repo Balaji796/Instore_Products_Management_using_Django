@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Welcome</title>
+    {% extends 'base.html' %} 
+    {% block home %}
+    {% load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .marq{
+            display:flex;
+            gap:14px;
+            font-size: 30px;
+            color:darkorange;
+            padding-top:14px;
+            font-weight:bold;
+            padding:12px;
+            background-color:rgba(0, 0, 205, 0.853);
+        
+        }
+
+        .card-holder{
+            display:flex;
+            margin-left:10px;
+            padding-top:10px;
+            gap:90px;
+            border-radius: 50%;
+            
+        }
+        img{
+            border-radius: 100%;
+        }
+        .btn{
+            font-size: medium;
+            color:antiquewhite;
+            background-color: brown;
+            padding-left: 10px;
+            margin-left: 30px;
+        }
+        .img{
+            border-radius: 10%;
+        }
+        .card{
+            background-color:#ffdfb466;
+            padding:20px;
+            border-radius:40px;
+        }
+        .card:hover{
+            padding:21px; 
+            box-shadow: -8px -8px 15px rgba(68, 13, 234, 0.4),5px 5px 15px rgba(233, 82, 218, 0.4); 
+            cursor:pointer;  
+        }
+    </style>
+</head>
+<body > 
+    <center>
+        <h1 style="color:crimson;font-size:xx-large;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">AB HOMENEEDS</h1>
+        <h2 style="font-style:italic">ALL TYPES OF VARIETIES OF METALS</h2>
+     <h4 style="font-style:italic">Quality and honesty speaks</h4>
+    </center>
+    
+      <form method='post' action="show">
+        {% csrf_token %}
+        <div class="card-holder">
+            <div class="card">
+             <center><h1> <b></b>STEEL</b></h1></center>
+              <img src="{% static '/images/steel.jpg' %}" alt="A icon"/>
+              <br>
+              <button class="btn"  name="steel">Show me</button>
+             </div>
+             <div class="card">
+                <center><h1> <b></b>ALUMINIUM</b></h1></center>
+              <img src="{% static '/images/alum.jpg' %}" alt="A icon"/>
+              <br>
+              <button class="btn" name="alum">Show me</button>
+             </div>
+             <div class="card" >
+                <center><h1> <b></b>IRON&WOOD</b></h1></center>
+              <img src="{% static '/images/iron.webp' %}" alt="A icon"/ style="height:312px;width:390px;">
+              <br>
+              <button class="btn" name="iron">Show me</button>
+             </div>
+          </div>
+        
+        <br>
+        <br>
+    
+            <div class="card-holder">
+                <div class="card">
+                 <center><h1> <b></b>BRASS&COPPER</b></h1></center>
+                  <img src="{% static '/images/bc.jpg' %}" alt="A icon"/>
+                  <br>
+                  <button class="btn"  name="brass">Show me</button>
+                 </div>
+                 <div class="card">
+                    <center><h1> <b></b>NONSTICK</b></h1></center>
+                  <img src="{% static '/images/nonstick.jpg' %}" alt="A icon"/>
+                  <br>
+                  <button class="btn" name="non">Show me</button>
+                 </div>
+                 <div class="card" >
+                    <center><h1> <b></b>PLASTIC</b></h1></center>
+                  <img src="{% static '/images/plastic.jpg' %}" alt="A icon"/>
+                  <br>
+                  <button class="btn" name="plastic">Show me</button>
+                 </div>
+              </div>
+        </form>
+    
+
+    {% endblock %} 
+    
+</body>
+</html>

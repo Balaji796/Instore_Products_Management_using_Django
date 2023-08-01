@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        .register{
+            background-color:#c5effe;
+            padding: 20px;
+            border-radius: 20px;
+            align-items: center;
+            float:center;
+            width:440px;
+            margin-left: 500px;
+            margin-top:30px;
+        }
+        input{
+            border-radius: 5px;
+    
+        }
+        select{
+            border-radius: 5px;
+        
+        }
+    </style>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block home %} 
+    <div class="register">
+   <u style="color:chocolate"> <center><h1 style="font-family:Georgia, 'Times New Roman', Times, serif;color:tomato">Register Product</h1></u>
+    <form method="post" action="add">
+        {% csrf_token %}
+    <h2>Name :</h2><input type="text" name="name" id="inpt"><br>
+    <script>
+        window.onload=function(){inpt.focus()}
+    </script>
+    
+    <h2>Piece/Kg :</h2>
+    <select name="kg" style="width:170px;height:22px">
+        <option disabled="true" selected>Piece/Kg </option>
+        <option>Piece</option>
+        <option>Kg</option>
+      </select>
+    <h2>Type :</h2>
+    <select name="type" style="width:170px;height:23px">
+        <option disabled="true" selected>Type </option>
+        <option>Steel</option>
+        <option>Aluminium</option>
+        <option>Iron</option>
+        <option>Wood</option>
+        <option>Nonstick</option>
+        <option>Brass</option>
+        <option>Copper</option>
+        <option>Plastic</option>
+      </select>
+    <h2>Quantity :</h2><input type="text" name="quan"><br>
+    <h2>Price :</h2><input type="text" name="price"><br>
+    <br>
+    <button style="font-size: medium;color:antiquewhite; background-color: brown;">submit</button>
+</form>
+    </center>
+    {% endblock %}
+</div>
+</body>
+</html>

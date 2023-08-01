@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Manager Login</title>
+    {% load static %}
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    <style>
+        body{
+            background-image:url("{% static '/images/m1.webp' %}");
+           background-repeat:no-repeat;
+            background-attachment:fixed;
+           background-size:cover;
+           
+           
+    
+        }
+        .back{
+            background-color:lavender;
+            width:570px;
+            margin-left: 790px;
+            margin-top: 50px;
+            border-radius: 30px;
+            padding: 10px;
+        }
+    </style>
+    
+</head>
+<body style="background-color:rgba(255, 248, 220, 0.721)" >
+    <a href="/" style="color:bisque">Back</a>
+    <div class="back">
+    <center><i class="fa-solid fa-user-tie" style="height:180px;width:220px"></i></center>
+    <center><u><h1 style="color:orangered; font-weight :bolder;font-size: 70px;margin-bottom:50px">Manager Login</h1></u></center>
+   <center><form method="post" action="a">
+        {% csrf_token %}
+    
+    <h1>Type Password:</h1><input type="password" name="pas" id="inpt"><br>
+    <button style="color:aliceblue;background-color:blue;font-size:medium;margin-top:50px;padding:10px;">Submit</button><br>
+    <br>
+    {{ack}}<br>
+    {{ak}}
+    </form>
+    <script>
+        window.onload=function(){inpt.focus()}
+    </script>    
+</center> 
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop</title>
+    <style>
+        .drop{
+            background-color:#c5effe;
+            padding: 20px;
+            border-radius: 20px;
+            align-items: center;
+            float:center;
+            width:440px;
+            margin-left: 510px;
+            margin-top:40px;
+        }
+    </style>
+</head>
+<body >
+    {% extends 'base.html' %} 
+    {% block home %} 
+    <div class="drop">
+    <center><u><h1>Drop Product</h1></u>
+        <form method='post' action="perfom">
+            {% csrf_token %}
+        <h2>Enter Product Name:</h2><input type="text" name="name" id="inpt"><br>
+        <br>
+    <button style="font-size: medium;color:antiquewhite; background-color: brown;">Delete</button>
+</form>  
+<script>
+    window.onload=function(){inpt.focus()}
+</script>
+
+    </center>
+</div>
+    {% endblock %} 
+
+</body>
+</html>

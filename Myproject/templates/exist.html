@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Total Bill</title>
+    {% extends 'bas.html' %} 
+    {% block home %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    <style>
+        .info{
+            display:inline-block;
+            border: 10px;
+            align-items: center;
+            
+        }
+        .form{
+            border: 2px;
+        }
+        .customer{
+            background-color:paleturquoise;
+            padding: 14px;
+            border-radius: 20px;
+            width: 380px;
+            margin-top: 30px;
+
+           
+        }
+        .bill{
+            background-color:paleturquoise;
+            padding: 20px;
+            border-radius: 20px;
+            width:380px;
+            padding:15px;
+        }
+        .hor{
+            display:inline-flex;
+            gap:150px;
+            margin-left: 200px;
+        
+        
+        }
+    </style>
+</head >
+<body>
+    <form method='post' action="store" class="form">
+        {% csrf_token %}
+    
+    <div class="container">
+   <center><u><h1 style="color:rgb(0, 116, 0);font-size:40px">Total Bill</h1></u></center> 
+    <table align="center" border="1" >
+    <thead>
+        <tr style="color:blue;font-weight:800;background-color:bisque;padding:1px">
+            <td>S.NO</td>
+            <td>Name</td>
+            <td>Quantity</td>
+            <td>Price</td>
+            <td>Total</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for k in queryset %}
+        <tr style="font-weight:bolder;padding:2px;">
+            <td>{{forloop.counter}}</td>
+            <td>{{k.Name}}</td>
+            <td>{{k.quan}}</td>
+            <td>{{k.price}}</td>
+            <td>{{k.cash}}</td>
+        {% endfor %}
+    
+    </tbody>
+</table>
+    <center><h2>Total Price: {{Total}}</h2>
+</div>
+<div class="hor">
+<div class="bill">
+    <u><h1 style="color:red"><center>Product to remove</center></h1></u>
+    <center><h2>Enter product name :</h2><input type="text" name="pro" id="inpt">
+    <br>
+    <br>
+    <button name="remove" style="color:aliceblue;background-color:blue;font-size:medium;">Remove</button><br>
+    <br>
+    <button name="cancle" style="color:aliceblue;background-color:blue;font-size:medium;">cancel bill</button>
+    </center>
+    </div>
+</div>
+<script>
+    window.onload=function(){inpt.focus()}
+</script>
+
+<?php echo date("Y-m-d");?>
+<div class="hor">
+       <div class="customer">
+        <center><u><h1 style="color:crimson">CUSTOMER DETAILS</h1></u>
+        <div class="info">
+         <h2 style="display:inline">Date :</h2><input type="text" name="dat" style="text-align:justify;font-family: Arial, sans-serif;" value="{{date}}" > </div><br>
+        <div class="info"><h2 style="display:inline">Contact:</h2><input type="text" name="phone" > </div><br>
+        <div class="info"><h2 style="display:inline">Addr&nbsp;:</h2><input type="text" name="addr"> </div><br>
+        <div class="info"><h2 style="display:inline">Amount :</h2><input type="text" name="total" value="{{price}}"><br></div><br>
+        <br>
+        <button id="pdfButton" style="color:aliceblue;background-color:blue;font-size:medium;margin:10px" name="download">Download</button>
+        <br>
+        <button style="color:aliceblue;background-color:blue;font-size:medium;" name="new"><i class="fa-solid fa-user"></i>New Bill</button>
+    </center> 
+</div>
+</div>
+</div>
+<br>
+    {% endblock %}
+
+</body>
+</html>

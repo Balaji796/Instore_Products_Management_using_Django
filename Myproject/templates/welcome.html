@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends 'base.html' %} 
+    {% block home %}
+    {% load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .marq{
+            display:flex;
+            gap:14px;
+            font-size: 30px;
+            color:darkorange;
+            padding-top:14px;
+            font-weight:bold;
+            padding:20px;
+            background-color:rgba(0, 0, 205, 0.853);
+        
+        }
+        .card-holder{
+            display:flex;
+            gap:40px;
+            padding-left:55px;
+            padding-top:40px;
+            margin-left:45px;
+            gap:90px;
+            border-radius: 50%;
+            
+        }
+        .btn{
+            font-size: medium;
+            color:antiquewhite;
+            background-color: brown;
+            padding-left: 10px;
+            margin-left: 30px;
+        }
+        .img{
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body > 
+    <center>
+        <h1 style="color:crimson;font-size:xx-large;font-family:italic;">AB HOMENEEDS</h1>
+        <h2 style="font-style:italic">ALL TYPES OF VARIETIES OF METALS</h2>
+     <h4 style="font-style:italic">Quality and honesty speaks</h4>
+    </center>
+    <div class="marq">
+        <marquee >Steel</marquee>
+        <marquee >Aluminium</marquee>
+        <marquee >Iron&Wood</marquee>
+      </div>
+      <form method='post' action="show">
+        {% csrf_token %}
+        <div class="card-holder">
+          <div>
+        
+           <a> <img src="{% static '/images/steel.jpg' %}" alt="A icon" class="img"/></a><br>
+            <a href="https://en.wikipedia.org/wiki/Netflix" target="blank"><button class="btn" name="steel">Show me</button></a>
+           </div>
+           <div >
+            <img src="{% static '/images/alum.jpg' %}" alt="A icon" class="img"/><br>
+            <a href="https://en.wikipedia.org/wiki/Amazon_Prime" target="blank"><button class="btn" name="alum">Show me</button></a>
+           </div>
+           <div >
+            <img src="{% static '/images/iron.jpg' %}" alt="A icon" class="img"/><br>
+            <a href="https://en.wikipedia.org/wiki/Aha_(streaming_service)" target="blank"><button class="btn" name="iron">Show me</button></a>
+           </div>
+
+        </div>
+        <br>
+        <br>
+        <div class="marq">
+            <marquee >Brass&Copper</marquee>
+            <marquee >Non-Stick</marquee>
+            <marquee >Plastic</marquee>
+          </div>
+            <div class="card-holder">
+              <div>
+            
+                <img src="{% static '/images/bc.jpg' %}" alt="A icon" class="img"/><br>
+                <a href="https://en.wikipedia.org/wiki/Netflix" target="blank"><button class="btn" name="brass">Show me</button></a>
+               </div>
+               <div >
+                <img src="{% static '/images/nonstick.jpg' %}" alt="A icon" class="img"/><br>
+                <a href="https://en.wikipedia.org/wiki/Amazon_Prime" target="blank"><button class="btn" name="non">Show me</button></a>
+               </div>
+               <div >
+                <img src="{% static '/images/plastic.jpg' %}" alt="A icon" class="img"/><br>
+                <a href="https://en.wikipedia.org/wiki/Aha_(streaming_service)" target="blank"><button class="btn" name="plastic">Show me</button></a>
+               </div>
+    
+            </div>
+        </form>
+    
+
+    {% endblock %} 
+    
+</body>
+</html>

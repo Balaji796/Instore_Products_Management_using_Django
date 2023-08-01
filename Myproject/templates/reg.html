@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registred Products</title>
+</head >
+<body>
+    {% extends 'bas.html' %} 
+    {% block home %} 
+   <center><u><h1>REGISTRED PRODUCTS</h1></u></center> 
+    <table align="center" border="2" >
+    <thead>
+        <tr style="color:blue;font-weight:800;background-color:bisque">
+            <td>S.NO</td>
+            <td>Name</td>
+            <td>Piece/Kg</td>
+            <td>Type</td>
+            <td>Quantity</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for k in queryset %}
+        {% if k.Quantity >= 10 %}
+        <tr style="font-weight:bolder;">
+            <td>{{forloop.counter}}</td>
+            <td>{{k.Name}}</td>
+            <td>{{k.Piece_Kg}}</td>
+            <td>{{k.Type}}</td>
+            <td>{{k.Quantity}}</td>
+            <td>{{k.Price}}</td>
+        </tr>
+        {% else %}
+        <tr style="background-color:red;color:aliceblue">
+            <td>{{forloop.counter}}</td>
+            <td>{{k.Name}}</td>
+            <td>{{k.Piece_Kg}}</td>
+            <td>{{k.Type}}</td>
+            <td>{{k.Quantity}}</td>
+            <td>{{k.Price}}</td>
+        </tr>
+        {% endif %}
+    
+        {% endfor %}
+
+    </tbody>
+</table>
+{% endblock %} 
+</body>
+</html>

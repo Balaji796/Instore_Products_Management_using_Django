@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales</title>
+</head >
+<body>
+    {% extends 'base.html' %} 
+    {% block home %} 
+   <center><u><h1>CUSTOMER DETAILS</h1></u></center>
+    <table align="center" border="4" >
+    <thead>
+        <tr style="color:blue;font-weight:800;background-color:aquamarine">
+            <td>S.NO</td>
+            <td>Date</td>
+            <td>Contact</td>
+            <td>Address</td>
+            <td>Amount</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for k in queryset %}
+        <tr style="font-weight:bolder;">
+            <td>{{forloop.counter}}</td>
+            <td>{{k.date}}</td>
+            <td>{{k.phone}}</td>
+            <td>{{k.addr}}</td>
+            <td>{{k.amount}}</td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+    <br>
+</table>
+<center><h1>Toatal Sales: {{sales}}</h1></center> 
+{% endblock %} 
+</body>
+</html>

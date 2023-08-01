@@ -1,0 +1,81 @@
+<title>Bill</title>
+{% extends 'bas.html' %} 
+{% block home %}
+{% load static %}
+<link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+<script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+<head>
+    <style>
+        .bill{
+            background-color:#E3DFFD;
+            padding: 20px;
+            border-radius: 20px;
+            align-items: center;
+            float:center;
+            width:420px;
+            margin-top:20px;
+        }
+        .clas{
+            display:inline-flex;
+            gap:120px;
+            margin-left:200px;
+            margin-top:30px;
+        }
+    </style>
+</head>
+<div class="clas">
+<div class="bill">
+<center><u><h1 style="color:crimson;margin-top:50px;font-size:45px;font-weight:bolder">Bill page</h1></u>
+<form method='post' action="get">
+    {% load static %}
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    {% csrf_token %}
+<h2>Enter product name :</h2><input type="text" name="name" id="inpt"><br>
+<h2>Enter Quantity :</h2><input type="text" name="quan" value="1"><br>
+<h2>Price :</h2>
+<h2 style="color:brown">{{price}}</h2>
+<br>
+<button name="add" style="color:aliceblue;background-color:blue;font-size:medium;"><i class="fa-solid fa-cart-plus" style="margin-right:10px;color:coral"></i>Add</button>
+<button name="remove" style="color:aliceblue;background-color:blue;font-size:medium;"><i class="fa-solid fa-eraser" style="margin-right:10px;color:coral"></i>Cancel Bill</button><br>
+<br>
+<script>
+    window.onload=function(){inpt.focus()}
+</script>
+
+</div>
+</div>
+<div class="clas">
+<div class="container">
+
+     <table align="center" border="1" >
+     <thead>
+        <center><u><h1 style="color:rgb(0, 116, 0);font-size:40px">Total Bill</h1></u></center> 
+         <tr style="color:blue;font-weight:800;background-color:bisque;padding:1px">
+             <td>S.NO</td>
+             <td>Name</td>
+             <td>Quantity</td>
+             <td>Price</td>
+             <td>Total</td>
+         </tr>
+     </thead>
+ 
+     <tbody>
+         {% for k in queryset %}
+         <tr style="font-weight:bolder;padding:2px;">
+             <td>{{forloop.counter}}</td>
+             <td>{{k.Name}}</td>
+             <td>{{k.quan}}</td>
+             <td>{{k.price}}</td>
+             <td>{{k.cash}}</td>
+         {% endfor %}
+     
+     </tbody>
+ </table>
+     <center><h2>Total Price: {{Total}}</h2>
+    <button name="bill" style="color:aliceblue;background-color:blue;font-size:larger;"><i class="fa-solid fa-money-bills"  style="margin-right:10px;color:coral"></i>Bill</button><br>
+ </div>
+</div>
+</form>
+{% endblock %} 
+</center>
+

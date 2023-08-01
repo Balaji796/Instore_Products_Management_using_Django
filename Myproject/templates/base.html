@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    <style>
+       body{
+            background-image:url("{% static '/images/b1.jpeg' %}");
+           background-repeat:no-repeat;
+            background-attachment:fixed;
+           background-size:cover;
+           padding:0;
+           margin:0;
+           
+        }
+
+    ul {
+        padding:0;
+        margin:0;
+        height:67px;
+        list-style-type:none;
+        font-size:18px;
+        background-color:#B2A4FF;
+        
+    }
+    li {
+        float: left;
+
+    }
+    li a {
+        display: block;
+        color:black;
+        padding:18px 20px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    li a:hover {
+        font-size:28px;
+        color:lavenderblush;
+        background-color:lightblue;
+    }
+    .ab{
+        margin-left:1250px;
+        margin-top:0px;
+        font-size:36px;
+        background-color:#FFB4B4;
+        padding-bottom:4px;
+        padding-left:50px;
+        padding-top:15.5px; 
+        
+    }
+
+
+</style>
+</head>
+<body style="background-color:rgba(240, 248, 255, 0.392)">
+    <ul>
+
+        <li>
+            <a href="/home1" >Home</a>
+        </li>
+        <li>
+            <a href="/welcome">Welcome</a>
+        </li>
+        <li>
+            <a href="/register">AddProduct</a>
+        </li>
+        <li>
+            <a href="/registred">Registred</a>
+        </li>
+        <li>
+            <a href="/search">Search</a>
+        </li>
+        <li>
+            <a href="/drop">Drop</a>
+        </li>
+        <li>
+            <a href="/customer">CustomerDetails</a>
+        </li>
+        <li>
+            <a href="/update">Update</a>
+        </li>
+        <h2 class="ab" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;color:indigo"><i class="fa-solid fa-dove fa-beat-fade" style="color:greenyellow;margin-right:8px;height:45px"></i>AB<a style="font-size:14px;font-style:italic">Make Things Possible</a></h2>
+        
+    
+    </ul>
+
+    
+</body>
+{% block home %} 
+{% endblock %}
+</html>
